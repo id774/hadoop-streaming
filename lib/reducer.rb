@@ -12,7 +12,8 @@ class Reducer
       newkey, wordlen = line.strip.split
       if newkey.length > 0
         unless key == newkey
-          puts "#{key}\t#{lettercount / wordcount}\n"
+          count = lettercount / wordcount
+          puts "#{key}\t#{count}\n" unless count.nan?
           key = newkey
         end
         wordcount = wordcount + 1.0
@@ -20,7 +21,8 @@ class Reducer
       end
     }
     unless key.nil?
-      puts "#{key}\t#{lettercount / wordcount}\n"
+      count = lettercount / wordcount
+      puts "#{key}\t#{count}\n" unless count.nan?
     end
   end
 end

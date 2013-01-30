@@ -8,7 +8,7 @@ class Mapper
       words = line.split(" ")
       words.each {|word|
         len = word.length
-        if /[A-Za-z]/ =~ word
+        if /\A[A-Za-z]/ =~ word
           text = "#{word[0]}\t#{len}"
           puts text unless text.nil?
         end
