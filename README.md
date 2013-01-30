@@ -3,7 +3,7 @@ Hadoop Streaming with Ruby
 
 This is Map-Reduce framework with Ruby using Hadoop and the examples of use.
 
-See doc/README.ja file.
+See doc/README file.
 (document written in Japanese.)
 
 
