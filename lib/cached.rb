@@ -4,11 +4,11 @@ require 'dalli'
 
 class Storage
   def get
-    cache.get('logstats')
+    cache.get('hadoop')
   end
 
   def put(hosts)
-    cache.set('logstats', hosts)
+    cache.set('hadoop', hosts)
   end
 
   private
