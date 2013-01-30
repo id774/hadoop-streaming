@@ -153,7 +153,7 @@ JOBLOG=$SCRIPT_HOME/log/production.log
 |
 +- doc
 |   |
-|   +- README.ja
+|   +- README
 |        本ドキュメント
 |
 +- lib 処理に必要な主要なファイルが格納される
