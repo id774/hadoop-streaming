@@ -7,8 +7,8 @@ class Storage
     cache.get('hadoop')
   end
 
-  def put(hosts)
-    cache.set('hadoop', hosts)
+  def put(hash)
+    cache.set('hadoop', hash)
   end
 
   private
