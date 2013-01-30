@@ -1,0 +1,33 @@
+#!/bin/sh
+
+setup() {
+    test -n "$1" || CONFIG=config/env.conf
+    test -n "$1" && CONFIG=$1
+    test "$1" = "--test" && CONFIG=test/test.conf
+    dir_name() { echo ${1%/*}; }
+    SCRIPT_HOME=$(cd $(dir_name $0) && pwd)/..
+    . $SCRIPT_HOME/$CONFIG
+    EXECDIR=${0%/*}
+    DATE=`date +%Y%m%d`
+}
+
+run() {
+    echo -n "*** $0: Job start at `/bin/hostname` on ">>$JOBLOG 2>&1
+    date "+%Y/%m/%d %T">>$JOBLOG 2>&1
+    . $SCRIPT_HOME/script/run>>$JOBLOG 2>&1
+    echo -n "*** $0: End of Job at `/bin/hostname` on ">>$JOBLOG 2>&1
+    date "+%Y/%m/%d %T">>$JOBLOG 2>&1
+    echo>>$JOBLOG 2>&1
+}
+
+after() {
+    $HADOOP fs -cat $HDFS_OUT/part-00000 > $SCRIPT_HOME/log/result.log
+}
+
+main() {
+    setup $*
+    run $*
+    after $*
+}
+
+main $*

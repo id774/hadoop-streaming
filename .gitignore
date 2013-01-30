@@ -1,0 +1,12 @@
+.svn
+metastore_db/
+derby.log
+Gemfile.lock
+db/*.db
+log/*.log
+coverage
+.bundle
+.rbenv-version
+pkg/
+vendor/gems/
+vendor/bundle/

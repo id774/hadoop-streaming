@@ -1,0 +1,11 @@
+#!/bin/sh
+
+run() {
+    $HADOOP jar $HADOOP_JAR \
+      -file lib/$MAPPER -mapper $MAPPER \
+      -file lib/$REDUCER -reducer $REDUCER \
+      -input $HDFS_IN/* -output $HDFS_OUT \
+      -file lib/cached.rb
+}
+
+run $*

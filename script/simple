@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat data/shakespeare/* | ruby lib/mapper.rb | sort | ruby lib/reducer.rb cached > log/result.log
