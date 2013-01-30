@@ -1,10 +1,12 @@
-# Version:20120726
+# Version:20130130
 
 source :rubygems
 # source "http://gems.github.com"
 
 gem 'sqlite3'
 gem 'sqlite3-ruby'
+gem 'dalli'
+gem 'activerecord', '~>3'
 
 group :test do
   gem 'rspec'
