@@ -10,11 +10,11 @@ See doc/README.ja file.
 Get Started
 -----------
 
-$ script/simple
+$ script/simple (using UNIX pipes.)
 
 or
 
-$ bin/run
+$ bin/run (running on Hadoop Streaming.)
 
 see
 log/result.log
@@ -29,8 +29,8 @@ See config/env.conf.
 Requirements
 ------------
 
-ruby
-hadoop
+ruby,
+hadoop,
 memcached or RDBMS/KVS
 
 
