@@ -28,6 +28,7 @@ Edit config/env.conf file.
 Requirements
 ------------
 
+This software requires
 ruby,
 hadoop,
 memcached or RDBMS/KVS
