@@ -16,14 +16,13 @@ or
 
 $ bin/run (running on Hadoop Streaming.)
 
-see
-log/result.log
+See log/result.log file.
 
 
 Configuration
 -------------
 
-See config/env.conf.
+Edit config/env.conf file.
 
 
 Requirements
@@ -37,7 +36,7 @@ memcached or RDBMS/KVS
 Developers
 ----------
 
-See doc/AUTHORS.
+See doc/AUTHORS file.
 
 
 Author
@@ -52,5 +51,5 @@ Author
 Copyright and license
 ---------------------
 
-See the file doc/LICENSE.
+See doc/LICENSE file.
 
