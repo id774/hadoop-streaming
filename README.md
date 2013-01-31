@@ -31,7 +31,7 @@ Requirements
 This software requires
 ruby,
 hadoop,
-memcached or RDBMS/KVS
+memcached or RDBMS/KVS.
 
 
 Developers
