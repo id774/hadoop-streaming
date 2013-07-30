@@ -1,4 +1,5 @@
-#!/opt/ruby/1.9.3/bin/ruby
+#!/opt/ruby/current/bin/ruby
+# -*- coding: utf-8 -*-
 
 $:.unshift File.join(File.dirname(__FILE__))
 

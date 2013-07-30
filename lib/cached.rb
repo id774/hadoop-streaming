@@ -1,3 +1,4 @@
+#!/opt/ruby/current/bin/ruby
 # -*- coding: utf-8 -*-
 
 require 'dalli'
