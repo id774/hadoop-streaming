@@ -17,8 +17,8 @@ class Reducer
           puts "#{key}\t#{count}\n" unless count.nan?
           key = newkey
         end
-        wordcount = wordcount + 1.0
-        lettercount = lettercount + wordlen.to_i
+        wordcount += 1.0
+        lettercount += wordlen.to_i
       end
     }
     unless key.nil?
