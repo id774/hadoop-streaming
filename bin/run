@@ -16,6 +16,10 @@ run() {
     date "+%Y/%m/%d %T">>$JOBLOG 2>&1
     cd $SCRIPT_HOME
     . $SCRIPT_HOME/script/run>>$JOBLOG 2>&1
+    echo "Return code is $?">>$JOBLOG 2>&1
+    hadoop fs -get $HDFS_OUT/_SUCCESS>>$JOBLOG 2>&1
+    test -f _SUCCESS && echo "SUCCESS">>$JOBLOG 2>&1
+    test -f _SUCCESS && rm _SUCCESS
     echo -n "*** $0: End of Job at `/bin/hostname` on ">>$JOBLOG 2>&1
     date "+%Y/%m/%d %T">>$JOBLOG 2>&1
     echo>>$JOBLOG 2>&1
