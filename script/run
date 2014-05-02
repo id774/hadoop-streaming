@@ -5,8 +5,7 @@ run() {
       -D $TOOLRUNNER_OPTIONS \
       -file lib/$MAPPER -mapper $MAPPER \
       -file lib/$REDUCER -reducer $REDUCER \
-      -input $HDFS_IN/* -output $HDFS_OUT \
-      -file lib/cached.rb
+      -input $INFILE -output $HDFS_OUT
 }
 
 run $*
