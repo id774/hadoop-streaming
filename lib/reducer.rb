@@ -5,9 +5,9 @@ $:.unshift File.join(File.dirname(__FILE__))
 
 class Reducer
   def self.reduce(stdin)
+    key = ""
     wordcount = 0.0
     lettercount = 0
-    key = ""
 
     stdin.each_line {|line|
       newkey, wordlen = line.strip.split
@@ -16,6 +16,8 @@ class Reducer
           count = lettercount / wordcount
           puts "#{key}\t#{count}\n" unless count.nan?
           key = newkey
+          wordcount = 0.0
+          lettercount = 0
         end
         wordcount += 1.0
         lettercount += wordlen.to_i
