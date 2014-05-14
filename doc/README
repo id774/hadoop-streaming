@@ -47,7 +47,7 @@ log/result.log
 
 $ bin/run
 
-log/development.log
+log/job.log
 log/result.log
 内容を確認する。
 
@@ -124,7 +124,7 @@ HADOOP_JAR=$HADOOP_ROOT/contrib/streaming/hadoop-streaming-0.20.205.0.jar
 HADOOP=$HADOOP_HOME/bin/hadoop
 
 # ログの出力先
-JOBLOG=$SCRIPT_HOME/log/production.log
+JOBLOG=$SCRIPT_HOME/log/job.log
 
 このファイルは単にシェルスクリプトとして呼ばれるため、事前処理もそのまま記述できる。
 詳細はファイルの内容を参照のこと。
@@ -174,7 +174,7 @@ JOBLOG=$SCRIPT_HOME/log/production.log
 |
 +- log ログファイルが格納される
 |   |
-|   +- production.log
+|   +- job.log
 |   |    処理経過が出力されるログファイル
 |   +- result.log
 |        集計結果が格納されるログファイル
