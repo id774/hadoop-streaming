@@ -15,7 +15,7 @@ run() {
     echo -n "*** $0: Job start at `/bin/hostname` on ">>$JOBLOG 2>&1
     date "+%Y/%m/%d %T">>$JOBLOG 2>&1
     cd $SCRIPT_HOME
-    . $SCRIPT_HOME/script/run>>$JOBLOG 2>&1
+    . $EXEC_RUNNER>>$JOBLOG 2>&1
     echo "Return code is $?">>$JOBLOG 2>&1
     hadoop fs -get $HDFS_OUT/_SUCCESS>>$JOBLOG 2>&1
     test -f _SUCCESS && echo "SUCCESS">>$JOBLOG 2>&1
@@ -26,7 +26,7 @@ run() {
 }
 
 after() {
-    $HADOOP fs -cat $HDFS_OUT/part-00000 > $SCRIPT_HOME/log/result.log
+    $HADOOP fs -cat $HDFS_OUT/part-00000 > $RESULTLOG
 }
 
 main() {
