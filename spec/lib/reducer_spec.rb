@@ -11,8 +11,41 @@ class Reducer
 end
 
 describe Reducer do
-  it '単語の平均の長さが出力される' do
-    expected = "A\t3.5\nB\t3.0\nF\t5.5\nH\t3.0\nM\t6.0\nP\t4.0\nT\t4.25\nW\t6.0\na\t3.6\nb\t4.375\nc\t7.6\nd\t5.5\ne\t4.0\nf\t5.333333333333333\ng\t5.666666666666667\nh\t4.333333333333333\ni\t5.5\nl\t6.5\nm\t5.75\nn\t6.333333333333333\no\t4.0\nr\t4.5\ns\t7.6\nt\t3.75\nw\t5.142857142857143\n"
-    Reducer.run.should == expected
+  context '#run' do
+    subject {
+      Reducer.run
+    }
+
+    let(:expected) {
+      "A\t3.5\n" +
+      "B\t3.0\n" +
+      "F\t5.5\n" +
+      "H\t3.0\n" +
+      "M\t6.0\n" +
+      "P\t4.0\n" +
+      "T\t4.25\n" +
+      "W\t6.0\n" +
+      "a\t3.6\n" +
+      "b\t4.375\n" +
+      "c\t7.6\n" +
+      "d\t5.5\n" +
+      "e\t4.0\n" +
+      "f\t5.333333333333333\n" +
+      "g\t5.666666666666667\n" +
+      "h\t4.333333333333333\n" +
+      "i\t5.5\n" +
+      "l\t6.5\n" +
+      "m\t5.75\n" +
+      "n\t6.333333333333333\n" +
+      "o\t4.0\n" +
+      "r\t4.5\n" +
+      "s\t7.6\n" +
+      "t\t3.75\n" +
+      "w\t5.142857142857143\n"
+    }
+
+    it '単語の平均の長さが出力される' do
+      expect(subject).to eq expected
+    end
   end
 end
