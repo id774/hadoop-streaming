@@ -1,7 +1,7 @@
-Hadoop Streaming with Ruby
-==========================
+Hadoop Streaming
+================
 
-This is Map-Reduce framework with Ruby using Hadoop and the examples of use.
+This is Map-Reduce framework using Hadoop and the examples of use.
 
 See doc/README file.
 (document written in Japanese.)
@@ -19,6 +19,12 @@ $ bin/run (running on Hadoop Streaming.)
 See log/result.log file.
 
 
+Testing
+-------
+
+$ rake spec
+
+
 Configuration
 -------------
 
@@ -29,9 +35,8 @@ Requirements
 ------------
 
 This software requires
-ruby,
-hadoop,
-memcached or RDBMS/KVS.
+ruby (or python etc),
+hadoop.
 
 
 Developers

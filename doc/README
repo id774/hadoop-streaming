@@ -1,23 +1,24 @@
 /* README.ja */
 
 名前
- hadoop-streaming-with-ruby - Hadoop によるデータ解析の足がかり
+ hadoop-streaming - Hadoop Streaming Framework
 
 書式
  bin/run
 
 説明
- このソフトウェアは Hadoop を利用してデータの解析をおこなう例である。
- Ruby と Hadoop Streaming を利用する。
+ Hadoop Streaming を薄くラップする便利なフレームワーク。
+ RSpec を利用してローカルでのテストを実施、その後 Hadoop で実行するのが目的。
+ 各種パラメータの環境設定やジョブの開始終了管理を一元的に管理する。
 
 
 [環境設定]
 
 1) 前提条件
-ruby, rspec, memcached. hadoop のインストールが完了していること。
+ruby, rspec, hadoop のセットアップが完了していること。
 
 2) テスト実行
-$ cd ~/hadoop-streaming-with-ruby
+$ cd ~/hadoop-streaming
 $ rake spec
 
 Mapper
@@ -34,6 +35,7 @@ Finished in 2.74 seconds
 [実行方法]
 
 まずは Hadoop を使わずに実行する。
+script/simple で UNIX のパイプのみを使って実行できる。
 
 $ script/simple
 

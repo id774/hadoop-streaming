@@ -6,7 +6,7 @@ require 'rspec'
 
 class Reducer
   def self.run
-    `cat spec/fixtures/* | ruby lib/mapper.rb test | sort | ruby lib/reducer.rb`
+    `cat spec/fixtures/* | ruby lib/mapper.rb test | sort | ruby lib/reducer.rb test`
   end
 end
 

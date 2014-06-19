@@ -31,6 +31,5 @@ class Reducer
 end
 
 if __FILE__ == $0
-  # require ARGV.shift || 'cached'
   Reducer.reduce($stdin)
 end
