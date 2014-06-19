@@ -148,11 +148,6 @@ JOBLOG=$SCRIPT_HOME/log/job.log
 |   +- env.conf
 |        設定ファイル
 |
-+- db
-|   |
-|   +- sqlite3.db
-|        (RDB を利用する場合) DB の格納先
-|
 +- doc
 |   |
 |   +- README
@@ -160,14 +155,10 @@ JOBLOG=$SCRIPT_HOME/log/job.log
 |
 +- lib 処理に必要な主要なファイルが格納される
 |   |
-|   +- cached.rb
-|   |    Memcached 用 Storage クラス
 |   +- mapper.rb
 |   |    Mapper
 |   +- reducer.rb
-|   |    Reducer
-|   +- sqlite.rb
-|        SQLite 用 Strorage クラス
+|        Reducer
 |
 +- data
 |   |
@@ -183,8 +174,6 @@ JOBLOG=$SCRIPT_HOME/log/job.log
 |
 +- script シェルスクリプトが格納される
 |   |
-|   +- migrate
-|   |    HiveQL のマイグレーション用スクリプト
 |   +- run
 |   |    Hadoop Streaming に処理を受け渡すスクリプト本体
 |   +- simple
@@ -195,26 +184,9 @@ JOBLOG=$SCRIPT_HOME/log/job.log
 +- vendor 外部ライブラリ
 
 
-[RDB の利用]
-
-他の KVS, RDB 等を利用したい場合は Storage クラスを実装し
-.get .put メソッドで入出力できるようラップする。
-
-
 [MapReduce]
 
 Mapper と Reducer は標準入出力を扱うためホワイトボックステストが困難である。
 そのためできるだけ処理を外部クラスに切り出し軽くする必要がある。
-
-Mapper の引数
-
-集計条件を指定する。
-test の場合、テストを実施する。
-
-Reducer の引数
-
-DB をラップするクラスファイルを指定する。
-Storage クラスを require するファイルを指定する。
-
 
 
