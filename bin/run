@@ -12,7 +12,7 @@ setup() {
 }
 
 run() {
-    echo -n "*** $0: Job start at `/bin/hostname` on ">>$JOBLOG 2>&1
+    echo -n "*** $0: Job started on `/bin/hostname` at ">>$JOBLOG 2>&1
     date "+%Y/%m/%d %T">>$JOBLOG 2>&1
     cd $SCRIPT_HOME
     . $EXEC_RUNNER>>$JOBLOG 2>&1
@@ -20,7 +20,7 @@ run() {
     hadoop fs -get $HDFS_OUT/_SUCCESS>>$JOBLOG 2>&1
     test -f _SUCCESS && echo "SUCCESS">>$JOBLOG 2>&1
     test -f _SUCCESS && rm _SUCCESS
-    echo -n "*** $0: End of Job at `/bin/hostname` on ">>$JOBLOG 2>&1
+    echo -n "*** $0: Job ended on `/bin/hostname` at ">>$JOBLOG 2>&1
     date "+%Y/%m/%d %T">>$JOBLOG 2>&1
     echo>>$JOBLOG 2>&1
 }
